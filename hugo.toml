@@ -1,3 +1,58 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Shixiao Liang'
+theme = 'stack'
+
+[params]
+mainSections = ["post"]
+featuredImageField = "image"
+rssFullContent = true
+# favicon 例子：favicon 放在 static/favicon.ico，则写成：
+# favicon = "/favicon.ico"
+
+[params.sidebar]
+subtitle = "Trashfish = 杂鱼"
+
+[params.sidebar.avatar]
+enabled = true
+local = true
+src = "avatar.png"
+
+
+# --- widgets.homepage ---
+
+[[params.widgets.homepage]]
+type = "search"
+
+[[params.widgets.homepage]]
+type = "archives"
+  [params.widgets.homepage.params]
+  limit = 5
+
+[[params.widgets.homepage]]
+type = "categories"
+  [params.widgets.homepage.params]
+  limit = 10
+
+[[params.widgets.homepage]]
+type = "tag-cloud"
+  [params.widgets.homepage.params]
+  limit = 10
+
+# --- widgets.page ---
+
+[[params.widgets.page]]
+type = "toc"
+
+
+
+[menu]
+main = []
+
+[[menu.social]]
+identifier = "home"
+name = "home"
+url = "https://trashfish.cc"
+  [menu.social.params]
+  icon = "home"
+
