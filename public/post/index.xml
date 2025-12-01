@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Shixiao Liang</title>
-        <link>https://example.org/post/</link>
+        <link>https://blog.trashfish.cc/post/</link>
         <description>Recent content in Posts on Shixiao Liang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate></lastBuildDate><atom:link href="https://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate></lastBuildDate><atom:link href="https://blog.trashfish.cc/post/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>

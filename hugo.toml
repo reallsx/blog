@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://blog.trashfish.cc/'
 languageCode = 'en-us'
 title = 'Shixiao Liang'
 theme = 'stack'
