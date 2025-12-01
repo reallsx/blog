@@ -1,6 +1,6 @@
 +++
 date = '2025-11-30T17:22:55-06:00'
-draft = true
+draft = false
 title = 'Trashfish'
 categories = [
     "Test"
