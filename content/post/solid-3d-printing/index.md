@@ -16,13 +16,11 @@ For a normal FDM 3D printer, usually the objects printed is for the visual or fu
 
 FDM 3D printing phantom for CT and linac was a thing I was asked to do. Although there are a lot of publications on this topic since probably 2010, I still had some hard time to figure out the printing part and I found that printing a "fully solid" object poses very different technical challenge from just printing weird stuff in general. As it does not look like some of the experience I gained is going to be included in any publication, I might use it to populate the blog a bit lmao. If it happens that you found yourself in a similar situation or you are working with the same printer/filament, this at least would provide a datapoint for your reference.
 
-![Stonefil surface](stonefil_surface.jpg)
-
 ## Configs
 
 The printer I used for printing large solid objects is a Prusa XL with two tool heads. The reason for choosing this printer was mainly the printable volume of 360 mm cubed. One of the tools (tool 0) has a 0.8 mm nozzle while the other one has 0.4 mm nozzle.
 
-The filament I have been using is PLA. This should be the easiest filament to work with but still I had quite some problem when printing this kind of objects. The products I used are Sunlu highspeed PLA, Prusament PLA, Polymaker Polylite PLA pro, Polymaker Polylight LW-PLA (prefoamed), Formfutura Stonefil PLA.
+The filament I have been using is PLA. This should be the easiest filament to work with but still I had quite some problem when printing this kind of objects. The products I used are Sunlu highspeed PLA, Prusament PLA, Polymaker Polylite PLA pro, 3DXTech ecomony PLA, Polymaker Polylight LW-PLA (prefoamed), Formfutura Stonefil PLA.
 
 The object I was trying to print is about the size of a head so the scale of the printings are about 20 cm. Many of the tests and trials were made on something a few cm or 10 cm scales.
 
@@ -32,11 +30,11 @@ I was using PrusaSlicer for almost all the stuff I printed. I tried OrcaSlicer w
 
 Usually PLA is not known for wrapping but it seems like it wraps anyways. The reason is very likely the 100% infill.
 
-The wrap causes the print to fail in our case. There are multiple failure modes. First is for Prusa XL, if the nozzle is too close to the surface it is printing on, the filament could not be extruded as smooth as it should be and this would make the pressure in the nozzle to be high, which could trigger the filament stuck sensor. Second is if the wrap is too bad the nozzle could collide with the thing you are printing. If this happens the best possible outcome is layer shift, and by this I mean the print will fail.
+The wrap causes the print to fail compelety in our case and there are multiple failure modes. First is for Prusa XL, if the nozzle is too close to the surface it is printing on, the filament could not be extruded as smooth as it should be and this would make the pressure in the nozzle to be high, which could trigger the filament stuck sensor. Second is if the wrap is too bad the nozzle could collide with the thing you are printing. If this happens the best possible outcome is layer shift, and by this I mean the print will fail. I have an extreme example of what happens after multiple collisions.
 
-What I found to work for me is turning off the fan. And check this lift before obstacle thing in the slicer. Could avoid some collision in my experience.
+What I found to work for me is turning off the fan. For PLA usually it is advised to keep the fan at 100% after a few layers and I would say that works for normal prints with low infill percentage, where you need the PLA to harden fast to support the next layer, as PLA can be printed pretty fast. For a 100% infill object, you have plenty of time for the previous layer to get hard. And enable "Steeper rap before obstacles" setting in the slicer. This is under printer setting in PrusaSlicer 2.9.2. Could avoid some collision in my experience.
 
-for the filaments I have played with, the Polymaker Polylite LW-PLA is absolutely the worst. This filament I only printed with the 0.4 mm nozzle as it is not recommended to print is using bigger nozzle if I remember correctly. 
+for the filaments I have played with, the Polymaker Polylite LW-PLA is absolutely the worst. This filament I only printed with the 0.4 mm nozzle as it is not recommended to print is using bigger nozzle if I remember correctly. Sunlu highspeed PLA and Formfutura Stonefil PLA almost had zero wrapping. And somehow the 3DXTech economy PLA wrapped quite a bit.
 
 ## Infill pattern
 
@@ -49,6 +47,10 @@ In my experience, with anchoring, there would be too much filament stacking near
 ## Density and flow rate
 
 This is studied by multiple papers and is actually kinda hard to control. When the nozzle is traveling, you can see how 
+
+![Stonefil surface](stonefil_surface.jpg)
+
+One thing I found counter intuitive is that with the same G-code, which means the extruded "filament length" is the same no matter which filament is loaded, the flow rate can be different. In my understanding it is the difference of properties like viscosity between different filaments that causes this and this is why one persuing perfect print quality should calibrate pressure advance for each filament they use. This is too much for me and in my opinion doing this is not rewarded at all in the environment I am in.
 
 ## Thoughts
 
