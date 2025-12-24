@@ -42,6 +42,8 @@ for the filaments I have played with, the Polymaker Polylite LW-PLA is absolutel
 
 Well, we don't really have many options if we are printing with 100% infill. One thing we can still tune is the anchoring. You can see the difference. 
 
+![100% infill with and without anchoring](infill_anchor.jpg)
+
 In my experience, with anchoring, there would be too much filament stacking near the perimeter which could trigger the filament stuck sensor. I suspect that this might make the wrapping problem worse (like, if the line in the infill shrinks, with anchor it applies stronger force on the perimeter), but I have no evidence. 
 
 ## Density and flow rate
