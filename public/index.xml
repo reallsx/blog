@@ -2,34 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Shixiao Liang</title>
-        <link>https://blog.trashfish.cc/</link>
+        <link>http://localhost:1313/</link>
         <description>Recent content on Shixiao Liang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 30 Nov 2025 17:22:55 -0600</lastBuildDate><atom:link href="https://blog.trashfish.cc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 13:27:28 -0600</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Solid 3d Printing</title>
+        <link>http://localhost:1313/post/solid-3d-printing/</link>
+        <pubDate>Mon, 15 Dec 2025 13:27:28 -0600</pubDate>
+        
+        <guid>http://localhost:1313/post/solid-3d-printing/</guid>
+        <description>&lt;h1 id=&#34;3d-printing-with-100-infills-for-larger-parts&#34;&gt;3D Printing with 100% infills for larger parts
+&lt;/h1&gt;&lt;p&gt;For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.&lt;/p&gt;
+&lt;p&gt;FDM 3D printing phantom for CT and linac was a thing I was asked to do. Although there are a lot of publications on this topic since probably 2010, I still had some hard time to figure out the printing part and I found that printing a &amp;ldquo;fully solid&amp;rdquo; object poses very different technical challenge from just printing weird stuff in general. As it does not look like some of the experience I gained is going to be included, I might use it to populate the blog a bit lmao. If it happens that you found yourself in a similar situation or you are working with the same printer/filament, this at least would provide a datapoint for your reference.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/post/solid-3d-printing/stonefil_surface.jpg&#34;
+	width=&#34;4032&#34;
+	height=&#34;3024&#34;
+	srcset=&#34;http://localhost:1313/post/solid-3d-printing/stonefil_surface_hu_77efaa47047f5ea5.jpg 480w, http://localhost:1313/post/solid-3d-printing/stonefil_surface_hu_910be74ea99dd99d.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Stonefil surface&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;133&#34;
+		data-flex-basis=&#34;320px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;making-images-look-better&#34;&gt;Making images look better
+&lt;/h2&gt;&lt;p&gt;You can control image size by mixing Markdown with a little HTML:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;img src=&amp;#34;stonefil_surface.jpg&amp;#34; alt=&amp;#34;Stonefil surface&amp;#34; width=&amp;#34;400&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can also set height (or both width and height), for example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;img src=&amp;#34;stonefil_surface.jpg&amp;#34; alt=&amp;#34;Stonefil surface close-up&amp;#34; width=&amp;#34;400&amp;#34; height=&amp;#34;300&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To place two images side by side, put them in a flex container:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;div style=&amp;#34;display: flex; gap: 1rem;&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;img src=&amp;#34;stonefil_surface.jpg&amp;#34; alt=&amp;#34;Stonefil surface&amp;#34; width=&amp;#34;300&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &amp;lt;img src=&amp;#34;stonefil_surface_detail.jpg&amp;#34; alt=&amp;#34;Detail view&amp;#34; width=&amp;#34;300&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Because this post is a leaf bundle, these paths (&lt;code&gt;stonefil_surface.jpg&lt;/code&gt;, &lt;code&gt;stonefil_surface_detail.jpg&lt;/code&gt;) refer to image files stored next to this &lt;code&gt;index.md&lt;/code&gt;.&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Trashfish</title>
-        <link>https://blog.trashfish.cc/post/first-post/</link>
+        <link>http://localhost:1313/post/first-post/</link>
         <pubDate>Sun, 30 Nov 2025 17:22:55 -0600</pubDate>
         
-        <guid>https://blog.trashfish.cc/post/first-post/</guid>
+        <guid>http://localhost:1313/post/first-post/</guid>
         <description>&lt;p&gt;Trashfish is a twisted translation of 杂鱼. A character-by-character translation could be miscellaneous fish, but it literally means small fry.&lt;/p&gt;
 &lt;p&gt;Unfortunately there has been so many incidents in my life that reminds me of my insignificance, that I self-identify as 杂鱼 and use it as a personal brand.&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>Archives</title>
-        <link>https://blog.trashfish.cc/archives/</link>
+        <link>http://localhost:1313/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.trashfish.cc/archives/</guid>
+        <guid>http://localhost:1313/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>Search</title>
-        <link>https://blog.trashfish.cc/search/</link>
+        <link>http://localhost:1313/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.trashfish.cc/search/</guid>
+        <guid>http://localhost:1313/search/</guid>
         <description></description>
         </item>
         
