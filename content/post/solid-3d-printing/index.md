@@ -1,6 +1,6 @@
 +++
-date = '2025-12-15T13:27:28-06:00'
-draft = true
+date = '2025-12-24T13:27:28-06:00'
+draft = false
 title = '3D Printing larger things with 100% infills'
 categories = [
     "Technical"
