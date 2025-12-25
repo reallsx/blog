@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Shixiao Liang</title>
-        <link>http://localhost:1313/post/</link>
-        <description>Recent content in Posts on Shixiao Liang</description>
+        <title>Technical on Shixiao Liang</title>
+        <link>http://localhost:1313/categories/technical/</link>
+        <description>Recent content in Technical on Shixiao Liang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Mon, 15 Dec 2025 13:27:28 -0600</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Dec 2025 13:27:28 -0600</lastBuildDate><atom:link href="http://localhost:1313/categories/technical/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>3D Printing larger things with 100% infills</title>
         <link>http://localhost:1313/post/solid-3d-printing/</link>
         <pubDate>Mon, 15 Dec 2025 13:27:28 -0600</pubDate>
@@ -64,16 +64,6 @@
 &lt;p&gt;One of the good thing is that for Core XY printers your object is not moving all the time and your extruder does not really gets havier as the print goes on. It seems like Core XY is gaining popularity anyways, I suppose more because of the speed.&lt;/p&gt;
 &lt;p&gt;I have a Elegoo centauri carbon and it is amazing although I did not use it to print full solid stuff.&lt;/p&gt;
 &lt;p&gt;I did not use LLM when I was writing this. You get to see how shitty my writing is. I would say it&amp;rsquo;s below reddit average.&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Trashfish</title>
-        <link>http://localhost:1313/post/first-post/</link>
-        <pubDate>Sun, 30 Nov 2025 17:22:55 -0600</pubDate>
-        
-        <guid>http://localhost:1313/post/first-post/</guid>
-        <description>&lt;p&gt;Trashfish is a twisted translation of 杂鱼. A character-by-character translation could be miscellaneous fish, but it literally means small fry.&lt;/p&gt;
-&lt;p&gt;Unfortunately there has been so many incidents in my life that reminds me of my insignificance, that I self-identify as 杂鱼 and use it as a personal brand.&lt;/p&gt;
 </description>
         </item>
         

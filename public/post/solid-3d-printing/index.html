@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="3D Printing larger things with 100% infills For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.\n">
+<title>3D Printing larger things with 100% infills</title>
+
+<link rel='canonical' href='http://localhost:1313/post/solid-3d-printing/'>
+
+<link rel="stylesheet" href="/scss/style.min.b0e76e98cdd4f7082d1fc36f7af7e0843a81201db2197c03ca426751dc923735.css"><meta property='og:title' content="3D Printing larger things with 100% infills">
+<meta property='og:description' content="3D Printing larger things with 100% infills For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.\n">
+<meta property='og:url' content='http://localhost:1313/post/solid-3d-printing/'>
+<meta property='og:site_name' content='Shixiao Liang'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='3D Printing' /><meta property='article:published_time' content='2025-12-15T13:27:28-06:00'/><meta property='article:modified_time' content='2025-12-15T13:27:28-06:00'/>
+<meta name="twitter:title" content="3D Printing larger things with 100% infills">
+<meta name="twitter:description" content="3D Printing larger things with 100% infills For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.\n">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/avatar_hu_e218bdd9923e3aa7.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Shixiao Liang</a></h1>
+            <h2 class="site-description">Trashfish = 杂鱼</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://trashfish.cc'
+                        target="_blank"
+                        title="home"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">Table of contents</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#configs">Configs</a></li>
+    <li><a href="#wrapping">Wrapping</a></li>
+    <li><a href="#infill-pattern">Infill pattern</a></li>
+    <li><a href="#density-and-flow-rate">Density and flow rate</a></li>
+    <li><a href="#thoughts">Thoughts</a></li>
+  </ul>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/technical/" >
+                Technical
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/solid-3d-printing/">3D Printing larger things with 100% infills</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2025-12-15T13:27:28-06:00'>Dec 15, 2025</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    6 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="3d-printing-larger-things-with-100-infills">3D Printing larger things with 100% infills
+</h1><p>For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.</p>
+<p>FDM 3D printing phantom for CT and linac was a thing I was asked to do. Although there are a lot of publications on this topic since probably 2010, I still had some hard time to figure out the printing part and I found that printing a &ldquo;fully solid&rdquo; object poses very different technical challenge from just printing weird stuff in general. As it does not look like some of the experience I gained is going to be included in any publication, I might use it to populate the blog a bit lmao. If it happens that you found yourself in a similar situation or you are working with the same printer/filament, this at least would provide a datapoint for your reference.</p>
+<h2 id="configs">Configs
+</h2><p>The printer I used for printing large solid objects is a Prusa XL with two tool heads. The reason for choosing this printer was mainly the printable volume of 360 mm cubed. One of the tools (tool 0) has a 0.8 mm nozzle while the other one has 0.4 mm nozzle.</p>
+<p>The filament I have been using is PLA. This should be the easiest filament to work with but still I had quite some problem when printing this kind of objects. The products I used are Sunlu highspeed PLA, Prusament PLA, Polymaker Polylite PLA pro, 3DXTech ecomony PLA, Polymaker Polylight LW-PLA (prefoamed), Formfutura Stonefil PLA.</p>
+<p>The object I was trying to print is about the size of a head so the scale of the printings are about 20 cm. Many of the tests and trials were made on something a few cm or 10 cm scales.</p>
+<p>I was using PrusaSlicer for almost all the stuff I printed. I tried OrcaSlicer with the maximum flow rate test and the extrusion multiplier test for other purpose. These are handy and helped me understand how 3D printers work.</p>
+<h2 id="wrapping">Wrapping
+</h2><p>Usually PLA is not known for wrapping but it seems like it wraps anyways. The reason is very likely the 100% infill.</p>
+<p>The wrap causes the print to fail compelety in our case and there are multiple failure modes. First is for Prusa XL, if the nozzle is too close to the surface it is printing on, the filament could not be extruded as smooth as it should be and this would make the pressure in the nozzle to be high, which could trigger the filament stuck sensor. Second is if the wrap is too bad the nozzle could collide with the thing you are printing. If this happens the best possible outcome is layer shift, and by this I mean the print will fail. I have an extreme example of what happens after multiple collisions.</p>
+<p><img src="/post/solid-3d-printing/collision.jpg"
+	width="609"
+	height="496"
+	srcset="/post/solid-3d-printing/collision_hu_1f8428ba091fd9ea.jpg 480w, /post/solid-3d-printing/collision_hu_f2e62fdeb9320ca4.jpg 1024w"
+	loading="lazy"
+	
+		alt="Result of collisions"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="122"
+		data-flex-basis="294px"
+	
+></p>
+<p>What I found to work for me is turning off the fan. For PLA usually it is advised to keep the fan at 100% after a few layers and I would say that works for normal prints with low infill percentage, where you need the PLA to harden fast to support the next layer, as PLA can be printed pretty fast. For a 100% infill object, you have plenty of time for the previous layer to get hard. The printer I am using does have a enclosure but I am not sure how big an effect it has here. And enable &ldquo;Steeper rap before obstacles&rdquo; setting in the slicer. This is under printer setting in PrusaSlicer 2.9.2. Could avoid some collision in my experience.</p>
+<p>Among the filaments I have played with, the Polymaker Polylite LW-PLA is absolutely the worst. This filament I only printed with the 0.4 mm nozzle as it is not recommended to print is using bigger nozzle if I remember correctly. Sunlu highspeed PLA and Formfutura Stonefil PLA almost had zero wrapping. And somehow the 3DXTech economy PLA wrapped quite a bit.</p>
+<h2 id="infill-pattern">Infill pattern
+</h2><p>Well, we don&rsquo;t really have many options if we are printing with 100% infill. One thing we can still tune is the anchoring. You can see the difference.</p>
+<p><img src="/post/solid-3d-printing/infill_anchor.png"
+	width="586"
+	height="237"
+	srcset="/post/solid-3d-printing/infill_anchor_hu_ac3f291e41bf4746.png 480w, /post/solid-3d-printing/infill_anchor_hu_721772d5be2ff75d.png 1024w"
+	loading="lazy"
+	
+		alt="100% infill with and without anchoring in slicer"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="247"
+		data-flex-basis="593px"
+	
+></p>
+<p><img src="/post/solid-3d-printing/infill_anchor_printed.png"
+	width="1004"
+	height="394"
+	srcset="/post/solid-3d-printing/infill_anchor_printed_hu_28535fa5fa92d8d8.png 480w, /post/solid-3d-printing/infill_anchor_printed_hu_829bbb1b22bdcbeb.png 1024w"
+	loading="lazy"
+	
+		alt="100% infill with and without anchoring printed with high speed PLA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="254"
+		data-flex-basis="611px"
+	
+></p>
+<p>In my experience, with anchoring, there would be too much filament stacking near the perimeter which could trigger the filament stuck sensor. I suspect that this might make the wrapping problem worse (like, if the line in the infill shrinks, with anchor it applies stronger force on the perimeter), but I have no evidence.</p>
+<h2 id="density-and-flow-rate">Density and flow rate
+</h2><p>Even if the infill density is set to 100% it is not guaranteed that all the space inside the perimeter is taken. When the nozzle is traveling, it is quite possible that we have more filament then we want at the corners and less at the straight lines. This thing is also filament dependent but it is quite common. In these two samples you can see how there are more filaments near the edges and the corners and not as much in the middle. You can also see that for the green one (high speed PLA) the middle is more or less filled while the brown one (stonefil PLA) is more like a net. These two slabs are printed using the same G-code file but the result is quite different, indicating that the flow rate is quite different. The extruder was extruding less stonefil compared to high speed PLA.</p>
+<p><img src="/post/solid-3d-printing/surfaces.png"
+	width="1047"
+	height="394"
+	srcset="/post/solid-3d-printing/surfaces_hu_2c43154b0b379fa1.png 480w, /post/solid-3d-printing/surfaces_hu_84047e5a09f587f1.png 1024w"
+	loading="lazy"
+	
+		alt="Surface of slab printed using high speed PLA and Stonefil PLA"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="265"
+		data-flex-basis="637px"
+	
+></p>
+<p>One thing I found counter intuitive is that with the same G-code, which means the extruded &ldquo;filament length&rdquo; is the same no matter which filament is loaded, the flow rate can be different. In my understanding it is the difference of properties like viscosity between different filaments that causes this and this is why one persuing perfect print quality should calibrate pressure advance for each filament they use. This is too much for me and in my opinion doing this is not rewarded at all in the environment I am in.</p>
+<h2 id="thoughts">Thoughts
+</h2><p>I would say printing fully solid objects is not really a &ldquo;proper&rdquo; way of using FDM 3d printer. I do like how FDM 3d printers are becoming more capable and cheaper and they enables people to make plastic things with very low cost. For this specific technology, I think the potential really lies in how you can modulate the density with some reference like what <a class="link" href="https://www.med.upenn.edu/CTResearch/pixelprint"  target="_blank" rel="noopener"
+    >PixelPrint</a> is doing. However if you are going to shoot it with MV photon beams it does not really matter that much.</p>
+<p>While I use a Presa XL at work, I have a Elegoo centauri carbon myself and it is amazing. The 256 mm cubed volume is more than enough for me and it prints quite fast. The default profile for filament in Elegoo slicer just worked. I did not use it to print full solid stuff though.</p>
+<p>I did not use LLM when I was writing this. You get to see how shitty my writing is. I would say it&rsquo;s below reddit average.</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/3d-printing/">3D Printing</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.32.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.546ab9ccd19cad27f3c96afdfb1aeb82f83d8005650c2fb7e326f3ca717353bb.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

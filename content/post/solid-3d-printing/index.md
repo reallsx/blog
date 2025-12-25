@@ -1,7 +1,7 @@
 +++
 date = '2025-12-15T13:27:28-06:00'
 draft = true
-title = 'Solid 3d Printing'
+title = '3D Printing larger things with 100% infills'
 categories = [
     "Technical"
 ]
@@ -10,7 +10,7 @@ tags = [
 ]
 +++
 
-# 3D Printing with 100% infills for larger parts
+# 3D Printing larger things with 100% infills
 
 For a normal FDM 3D printer, usually the objects printed is for the visual or functional prototype and the inner part does not matter that much. So the infill of a print is usually for supporting the structure and it does not require a high infill percentage. Even for some functional parts, usually a smaller infill percentage is preferred for the sake of filament cost and printing time. 100% infill is required only in some specific situations and one of those is printing solid phantom to achieve certain HU value under CT scans.
 
@@ -32,33 +32,34 @@ Usually PLA is not known for wrapping but it seems like it wraps anyways. The re
 
 The wrap causes the print to fail compelety in our case and there are multiple failure modes. First is for Prusa XL, if the nozzle is too close to the surface it is printing on, the filament could not be extruded as smooth as it should be and this would make the pressure in the nozzle to be high, which could trigger the filament stuck sensor. Second is if the wrap is too bad the nozzle could collide with the thing you are printing. If this happens the best possible outcome is layer shift, and by this I mean the print will fail. I have an extreme example of what happens after multiple collisions.
 
-What I found to work for me is turning off the fan. For PLA usually it is advised to keep the fan at 100% after a few layers and I would say that works for normal prints with low infill percentage, where you need the PLA to harden fast to support the next layer, as PLA can be printed pretty fast. For a 100% infill object, you have plenty of time for the previous layer to get hard. And enable "Steeper rap before obstacles" setting in the slicer. This is under printer setting in PrusaSlicer 2.9.2. Could avoid some collision in my experience.
+![Result of collisions](collision.jpg)
 
-for the filaments I have played with, the Polymaker Polylite LW-PLA is absolutely the worst. This filament I only printed with the 0.4 mm nozzle as it is not recommended to print is using bigger nozzle if I remember correctly. Sunlu highspeed PLA and Formfutura Stonefil PLA almost had zero wrapping. And somehow the 3DXTech economy PLA wrapped quite a bit.
+What I found to work for me is turning off the fan. For PLA usually it is advised to keep the fan at 100% after a few layers and I would say that works for normal prints with low infill percentage, where you need the PLA to harden fast to support the next layer, as PLA can be printed pretty fast. For a 100% infill object, you have plenty of time for the previous layer to get hard. The printer I am using does have a enclosure but I am not sure how big an effect it has here. And enable "Steeper rap before obstacles" setting in the slicer. This is under printer setting in PrusaSlicer 2.9.2. Could avoid some collision in my experience.
+
+Among the filaments I have played with, the Polymaker Polylite LW-PLA is absolutely the worst. This filament I only printed with the 0.4 mm nozzle as it is not recommended to print is using bigger nozzle if I remember correctly. Sunlu highspeed PLA and Formfutura Stonefil PLA almost had zero wrapping. And somehow the 3DXTech economy PLA wrapped quite a bit.
 
 ## Infill pattern
 
 Well, we don't really have many options if we are printing with 100% infill. One thing we can still tune is the anchoring. You can see the difference. 
 
-![100% infill with and without anchoring](infill_anchor.jpg)
+![100% infill with and without anchoring in slicer](infill_anchor.png)
+
+![100% infill with and without anchoring printed with high speed PLA](infill_anchor_printed.png)
 
 In my experience, with anchoring, there would be too much filament stacking near the perimeter which could trigger the filament stuck sensor. I suspect that this might make the wrapping problem worse (like, if the line in the infill shrinks, with anchor it applies stronger force on the perimeter), but I have no evidence. 
 
 ## Density and flow rate
 
-This is studied by multiple papers and is actually kinda hard to control. When the nozzle is traveling, you can see how 
+Even if the infill density is set to 100% it is not guaranteed that all the space inside the perimeter is taken. When the nozzle is traveling, it is quite possible that we have more filament then we want at the corners and less at the straight lines. This thing is also filament dependent but it is quite common. In these two samples you can see how there are more filaments near the edges and the corners and not as much in the middle. You can also see that for the green one (high speed PLA) the middle is more or less filled while the brown one (stonefil PLA) is more like a net. These two slabs are printed using the same G-code file but the result is quite different, indicating that the flow rate is quite different. The extruder was extruding less stonefil compared to high speed PLA.
 
-![Stonefil surface](stonefil_surface.jpg)
+![Surface of slab printed using high speed PLA and Stonefil PLA](surfaces.png)
 
 One thing I found counter intuitive is that with the same G-code, which means the extruded "filament length" is the same no matter which filament is loaded, the flow rate can be different. In my understanding it is the difference of properties like viscosity between different filaments that causes this and this is why one persuing perfect print quality should calibrate pressure advance for each filament they use. This is too much for me and in my opinion doing this is not rewarded at all in the environment I am in.
 
 ## Thoughts
 
-OK this is fun but not really a "proper" way of using FDM 3d printing. A more proper way would be pixelprint but nah.
+I would say printing fully solid objects is not really a "proper" way of using FDM 3d printer. I do like how FDM 3d printers are becoming more capable and cheaper and they enables people to make plastic things with very low cost. For this specific technology, I think the potential really lies in how you can modulate the density with some reference like what [PixelPrint](https://www.med.upenn.edu/CTResearch/pixelprint) is doing. However if you are going to shoot it with MV photon beams it does not really matter that much.
 
-One of the good thing is that for Core XY printers your object is not moving all the time and your extruder does not really gets havier as the print goes on. It seems like Core XY is gaining popularity anyways, I suppose more because of the speed.
-
-I have a Elegoo centauri carbon and it is amazing although I did not use it to print full solid stuff.
+While I use a Presa XL at work, I have a Elegoo centauri carbon myself and it is amazing. The 256 mm cubed volume is more than enough for me and it prints quite fast. The default profile for filament in Elegoo slicer just worked. I did not use it to print full solid stuff though.
 
 I did not use LLM when I was writing this. You get to see how shitty my writing is. I would say it's below reddit average.
-
